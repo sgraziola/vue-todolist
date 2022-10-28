@@ -23,6 +23,14 @@
 
     <div id="app">
         <div class="task_list">
+            <div class="addTask">
+                <h3>Nuova Attività</h3>
+                <input type="text" v-model="newTask.text" @keyup.enter="addTask">
+                <button v-on:click="addTask">Aggiungi Attività</button>
+    
+                <div v-show="warning">Attenzione! L'attività inserita deve avere almeno 10 caratteri</div>
+            </div>
+
             <h3>TO DO LIST:</h3>
             <ul  v-if="tasks.length !== 0">
                 <li v-for="(task, index) in tasks" :class="task.done === true ? 'done' : '' ">

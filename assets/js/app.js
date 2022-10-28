@@ -23,6 +23,13 @@ const { createApp } = Vue;
 createApp({
   data() {
     return {
+      newTask: {
+        text: "",
+        done: false
+      },
+      
+      warning : false,
+
       tasks: [
         {
             text: "Insalata",
@@ -52,6 +59,19 @@ createApp({
         //console.log("Ho cliccato sulla X", index);
         this.tasks.splice(index, 1)
     },
+
+    addTask(){
+        //console.log("ho cliccato");
+
+        if(this.newTask.text.length < 4){
+            this.warning = true;
+        } else {
+            this.warning = false;
+            this.tasks.unshift(this.newTask)
+            //console.log(this.tasks);
+            //manca come pulire l'input text
+        }
+    }
   }
 
 }).mount('#app')
