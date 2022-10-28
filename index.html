@@ -19,7 +19,15 @@
 <body>
 
     <div id="app">
-        <h1>{{ message }}</h1>
+        <div class="task_list">
+            <h3>TO DO LIST:</h3>
+            <ul >
+                <li v-for="(task, index) in tasks" :class="task.done === true ? 'done' : '' ">{{task.text}} 
+                    
+                </li>
+            </ul>
+            
+        </div>
     </div>
   
   <!-- Bootstrap JavaScript Libraries -->

@@ -24,7 +24,30 @@ import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
 createApp({
   data() {
     return {
-      message: 'Hello Vue!'
-    }
+      tasks: [
+        {
+            text: "Insalata",
+            done: true
+        },
+       
+        {
+            text: "Pomodori",
+            done: false,
+        },
+        
+        {
+            text: "Tonno",
+            done: true,
+        },
+        
+        {
+            text: "Uova",
+            done: false,
+        },
+        
+      ]}
+  },
+  methods: {
+    
   }
 }).mount('#app')
