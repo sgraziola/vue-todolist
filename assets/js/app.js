@@ -18,8 +18,7 @@ Bonus:
 2- cliccando sul testo dell'item, invertire il valore della proprietà done del todo corrispondente (se done era uguale a false, impostare true e viceversa)
 
 */
-
-import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+const { createApp } = Vue;
 
 createApp({
   data() {
@@ -49,9 +48,10 @@ createApp({
   },
   methods: {
    
-    /* delete(index){
-        console.log("Ho cliccato sulla X")
+    delete(index){
+        console.log("Ho cliccato sulla X", index);
     }
-   */
-}
-}).mount('#app')
+  
+  }
+
+}).mount('#app');
