@@ -6,13 +6,13 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <!-- FontAwesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Bootstrap CSS v5.2.1 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-  
-  <!-- FontAwesome CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   
   <!-- My Style -->
   <link rel="stylesheet" href="./assets/css/app.css">
@@ -24,12 +24,12 @@
     <div id="app">
         <div class="task_list">
             <h3>TO DO LIST:</h3>
-            <ul>
+            <ul  v-if="tasks.length !== 0">
                 <li v-for="(task, index) in tasks" :class="task.done === true ? 'done' : '' ">
-                    {{task.text}} <i class="fa-solid fa-times-circle" @click="delete(index)"></i>
+                    {{task.text}} <i class="fa-solid fa-times-circle" @click="removeTask(index)"></i>
                 </li>
             </ul>
-
+            <p v-else>Bravo, hai terminato tutte le cose da fare!</p>
         </div>
     </div>
   
