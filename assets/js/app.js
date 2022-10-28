@@ -25,62 +25,61 @@ createApp({
     return {
       newTask: {
         text: "",
-        done: false
+        done: false,
       },
-      
-      warning : false,
+
+      warning: false,
 
       tasks: [
         {
-            text: "Insalata",
-            done: true
+          text: "Insalata",
+          done: true,
         },
-       
+
         {
-            text: "Pomodori",
-            done: false,
+          text: "Pomodori",
+          done: false,
         },
-        
+
         {
-            text: "Tonno",
-            done: true,
+          text: "Tonno",
+          done: true,
         },
-        
+
         {
-            text: "Uova",
-            done: false,
+          text: "Uova",
+          done: false,
         },
-        
-      ]}
+      ],
+    };
   },
   methods: {
-   
-    removeTask(index){
-        //console.log("Ho cliccato sulla X", index);
-        this.tasks.splice(index, 1)
+    removeTask(index) {
+      //console.log("Ho cliccato sulla X", index);
+      this.tasks.splice(index, 1);
     },
 
-    addTask(){
-        //console.log("ho cliccato");
+    addTask() {
+      //console.log("ho cliccato");
 
-        if(this.newTask.text.length < 4){
-            this.warning = true;
-        } else {
-            this.warning = false;
-            this.tasks.unshift(this.newTask)
-            //console.log(this.tasks);
-            //manca come pulire l'input text
-            this.newTask = {
-                text: "",
-            }
-        }
+      if (this.newTask.text.length < 4) {
+        this.warning = true;
+      } else {
+        this.warning = false;
+        this.tasks.unshift(this.newTask);
+        //console.log(this.tasks);
+        //manca come pulire l'input text
+        this.newTask = {
+          text: "",
+          done: false,
+        };
+      }
     },
 
-    barred(index){
-        //console.log("cliccato sul testo di" ,index);
-        //console.log(this.tasks[index].done);
-        this.tasks[index].done = !this.tasks[index].done
-    }
-  }
-
-}).mount('#app')
+    barred(index) {
+      //console.log("cliccato sul testo di" ,index);
+      //console.log(this.tasks[index].done);
+      this.tasks[index].done = !this.tasks[index].done;
+    },
+  },
+}).mount("#app");
