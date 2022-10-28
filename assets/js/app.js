@@ -70,12 +70,15 @@ createApp({
             this.tasks.unshift(this.newTask)
             //console.log(this.tasks);
             //manca come pulire l'input text
+            this.newTask = {
+                text: "",
+            }
         }
     },
 
     barred(index){
-        console.log("cliccato sul testo di" ,index);
-        console.log(this.tasks[index].done);
+        //console.log("cliccato sul testo di" ,index);
+        //console.log(this.tasks[index].done);
         this.tasks[index].done = !this.tasks[index].done
     }
   }
