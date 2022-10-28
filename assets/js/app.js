@@ -48,6 +48,10 @@ createApp({
       ]}
   },
   methods: {
-    
-  }
+   
+    /* delete(index){
+        console.log("Ho cliccato sulla X")
+    }
+   */
+}
 }).mount('#app')
