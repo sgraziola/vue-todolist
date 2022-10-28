@@ -61,8 +61,9 @@ createApp({
 
     addTask() {
       //console.log("ho cliccato");
+      console.log(this.newTask.text.length);
 
-      if (this.newTask.text.length < 4) {
+      if (this.newTask.text.length < 4 || this.newTask.text.trim().length === 0) {
         this.warning = true;
       } else {
         this.warning = false;
